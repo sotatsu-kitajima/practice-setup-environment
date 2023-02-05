@@ -1,12 +1,42 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    //es6＋はまだ全ブラウザが対応していない　23/02/06   
+    "target": "ES6",
     "lib": ["dom", "dom.iterable", "esnext"],
+    //nextが求めてる
     "allowJs": true,
+    //全ファイルがuse strictになる。必須におもえる
+    "alwaysStrict": true,
+    //到達不可能なコードはエラーを吐かせてコードレビュのコストを下げる
+    "allowUnreachableCode": false,
+    //nextが求めてる
     "skipLibCheck": true,
+    //オプションプロパティにundefinedの代入することを禁止し意図しないundefinedの代入を防ぐ
+    //https://typescriptbook.jp/reference/tsconfig/exactoptionalpropertytypes
+    "exactOptionalPropertyTypes": true,
     "strict": true,
+    //OSによっては小文字大文字区別できないためtrue
     "forceConsistentCasingInFileNames": true,
+    //nextが求めてる
     "noEmit": true,
+    //override修飾子を強制してスーパークラスの継承元メソッドの名称が変わった場合なども対応できるようにする。
+    "noImplicitOverride": true,
+    //意図しないundefinedのreturnを防ぐ
+    "noImplicitReturns": true,
+    //厳密に定義されていないプロパティはundefined型とのユニオン型として解釈され、アクセスされると警告を出せる。
+    /**
+      type ObjectLiteralLike = {
+        en: string;
+        fr: string;
+        it: string;
+        [lang: string]: string;//←
+      };
+    */
+    "noUncheckedIndexedAccess": true,
+    //未使用のローカル変数に対してエラーを吐く
+    "noUnusedLocals":true,
+    //未使用のパラメータに対してエラーを吐く
+    "noUnusedParameters": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -21,7 +51,8 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@app/*":["./src/app/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
