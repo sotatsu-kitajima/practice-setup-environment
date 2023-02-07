@@ -1,0 +1,23 @@
+{
+    //80以上は醜いとされてる。
+    "printWidth": 80,
+    //１行長くなるから４じゃなくて２
+    "tabWidth": 2,
+    "useTabs": false,
+    //無い場合予想しない挙動になることがある。
+    "semi": true,
+    //"''"が書けるため。
+    "singleQuote": false,
+    // 必要な場合のみ、オブジェクトのプロパティの周りに引用符を追加
+    "quoteProps": "as-needed",
+    //"''"が書けるため。
+    "jsxSingleQuote": false,
+    //ES5(オブジェクト、配列など)で有効な場合、末尾にカンマを付けます。TypeScriptの型パラメータには、末尾にカンマを付けない。
+    "trailingComma": "es5",
+    //見やすいので、オブジェクトリテラルに含まれるブラケット間のスペースを表示
+    "bracketSpacing": true,
+    //HTML（jsx等含む）の最後の行に単独で「>」を表示。見やすい。
+    "bracketSameLine": false,
+    //HTML、Vue、JSXで、1行に1つの属性を強制する。
+    "singleAttributePerLine": true
+}
