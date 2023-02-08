@@ -1,0 +1,28 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.addMissingImports": true
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "cSpell.words": [
+    "bitwarden",
+    "echarts",
+    "nodenv",
+    "Oneday",
+    "placehold",
+    "ress",
+    "unoptimized"
+  ],
+  "files.insertFinalNewline": true,
+  //何も操作をしていないファイルを閉じないようにする。
+  "workbench.editor.enablePreview": false,
+  //無をコピーできなくする。pasteする際に間違ってコピーしてしまっても大丈夫になる。
+  "editor.emptySelectionClipboard": false
+}
