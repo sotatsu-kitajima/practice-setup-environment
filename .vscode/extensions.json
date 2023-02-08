@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "streetsidesoftware.code-spell-checker",
+    "mosapride.zenkaku",
+    "formulahendry.auto-rename-tag",
+    "xyz.local-history",
+    "wmaurer.change-case",
+    "eamodio.gitlens",
+    "MS-vsliveshare.vsliveshare",
+    "bradlc.vscode-tailwindcss",
+    "tldraw-org.tldraw-vscode"
+  ]
+}

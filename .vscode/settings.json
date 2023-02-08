@@ -11,14 +11,15 @@
     "typescript",
     "typescriptreact"
   ],
-  "cSpell.words": [
-    "bitwarden",
-    "echarts",
-    "nodenv",
-    "Oneday",
-    "placehold",
-    "ress",
-    "unoptimized"
+  "cSpell.words": ["sochan"],
+  "cSpell.ignorePaths": [
+    "package-lock.json",
+    "node_modules",
+    "vscode-extension",
+    ".git/objects",
+    ".vscode",
+    ".vscode-insiders",
+    "pnpm-lock.yaml"
   ],
   "files.insertFinalNewline": true,
   //何も操作をしていないファイルを閉じないようにする。
