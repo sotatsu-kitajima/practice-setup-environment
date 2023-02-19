@@ -8,10 +8,14 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "format": "prettier --write ./src",
+    "format": "prettier --write src/",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "prepare": "husky install"
+  },
+  "lint-staged":{
+    "*.{js,jsx,ts,tsx}": "eslint --fix",
+    "src/": "prettier --write"
   },
   "dependencies": {
     "@next/font": "13.1.6",
@@ -23,6 +27,7 @@
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "save-dev": "^0.0.1-security",
     "typescript": "4.9.5"
   },
   "devDependencies": {
@@ -39,7 +44,7 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-storybook": "^0.6.10",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "husky": "^8.0.0",
+    "husky": "^8.0.3",
     "hygen": "^6.2.11",
     "lint-staged": "^13.1.2",
     "prettier": "^2.8.3"
