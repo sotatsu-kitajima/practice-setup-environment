@@ -1,7 +1,7 @@
-Name: next.js ci
+name: next.js ci
 on:
   push:
-    branches_ignore: [main]
+    branches-ignore: [main]
   pull_request:
     branches: [main]
 
@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout PR
-        use: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: setup node18
-        use: actions/setup-node@v2
+        uses: actions/setup-node@v2
         with:
-        node-version: 18
+          node-version: 18
       - name: install package
         run: npm ci
       - name: lint code
