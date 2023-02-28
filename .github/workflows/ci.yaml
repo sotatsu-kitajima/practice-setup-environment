@@ -13,7 +13,16 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 18
-      - name: install package
+      - name: cache node modules
+        id: cache-npm
+        uses: actions/cache/@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          #キャッシュがある場合は~/.npmに復元されているから早く終わる。ない場合はactionが終了してからキャッシュを作成してくれる。
+      - name: install node modules
         run: npm ci
       - name: lint code
         run: npm run lint:fix
