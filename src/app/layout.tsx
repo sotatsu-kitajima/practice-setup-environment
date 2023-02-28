@@ -12,7 +12,7 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <p>fd</p>
+      <p>fdfdfd</p>
       <body>{children}</body>
     </html>
   );
