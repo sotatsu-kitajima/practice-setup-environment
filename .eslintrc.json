@@ -1,72 +1,57 @@
 {
   //eslint-plugin-react,eslint-plugin-react-hooks,eslint-plugin-nextも含まれてる。
-  "extends": ["next","next/core-web-vitals","prettier"],
-  "plugins": [
-    "unused-imports"
-  ],
+  "extends": ["next", "next/core-web-vitals", "prettier"],
+  "plugins": ["unused-imports"],
   "rules": {
     //使われていないimportはerror
-    "unused-imports/no-unused-imports":"error",
+    "unused-imports/no-unused-imports": "error",
     //使われていない変数や引数のチェック
- "unused-imports/no-unused-vars": [
-  //ルールに一致しない場合は警告？？
-     "warn",
-     {
-      // 変数
-      "vars": "all",
-      //「_」から始まる変数はチェック対象外 
-      "varsIgnorePattern": "^_", 
-      //使用している変数が引数の最後の変数であれば、それより前の引数は使ってなくてもいい。
-      "args": "after-used", 
-      //_から始まる引数はルール対象外
-      "argsIgnorePattern": "^_" 
-    }
-   ],
-   //参考→https://chaika.hatenablog.com/entry/2022/01/17/083000
-   "import/order":[
-    "error",
-    {
-      "groups": [
-        "builtin",  // 1. fsや path などの node "builtin" のモジュール 
-        "external",  // 2. npm install したパッケージ
-        "internal", // 3. webpack などでパス設定したモジュール
-        ["parent", "sibling"], // 4. 親階層と小階層のファイル
-        "object",  // object"-imports
-        "type",  // 型だけをインポートする type imports
-        "index" // 同階層のファイル
-      ],
-      //設定されたpathGroupsによって処理されないインポートタイプをどのタイプにするか定義
-      "pathGroupsExcludedImportTypes": ["builtin"],
-      "alphabetize": { "order": "asc", "caseInsensitive": true },
-      "newlines-between": "always" ,
-      "pathGroups": [
-        // react 関連を external より前にする
-        // "pathGroupsExcludedImportTypes": ["react"], にしてみたが
-        {
-          "pattern": "react**",
-          "group": "external",
-          "position": "before"
-        },
-        // `@/app`, `@/features/`, `@/libs` の import をひとグループにして internal の前に
-        {
-          "pattern": "{@/app/**,@/features/**,@/libs/**}",
-          "group": "internal",
-          "position": "before"
-        },
-        // `@/components`, `@/pages` の import をグルーピング
-        {
-          "pattern": "{@/components/**,@/pages/**}",
-          "group": "internal",
-          "position": "before"
-        },
-        // CSS module を一番最後に
-        {
-          "pattern": "./**.module.css",
-          "group": "index",
-          "position": "after"
-        }
-      ]
-    }
-   ]
+    "unused-imports/no-unused-vars": [
+      //ルールに一致しない場合は警告？？
+      "warn",
+      {
+        // 変数
+        "vars": "all",
+        //「_」から始まる変数はチェック対象外
+        "varsIgnorePattern": "^_",
+        //使用している変数が引数の最後の変数であれば、それより前の引数は使ってなくてもいい。
+        "args": "after-used",
+        //_から始まる引数はルール対象外
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    //参考→https://chaika.hatenablog.com/entry/2022/01/17/083000
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin", // 1. fsや path などの node "builtin" のモジュール
+          "external", // 2. npm install したパッケージ
+          "internal", // 3. webpack などでパス設定したモジュール
+          ["parent", "sibling"], // 4. 親階層と小階層のファイル
+          "object", // object"-imports
+          "type", // 型だけをインポートする type imports
+          "index" // 同階層のファイル
+        ],
+        //設定されたpathGroupsによって処理されないインポートタイプをどのタイプにするか定義
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "newlines-between": "always",
+        "pathGroups": [
+          // react 関連を external より前にする
+          // "pathGroupsExcludedImportTypes": ["react"], にしてみたが
+          {
+            "pattern": "react**",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "**.style.ts",
+            "group": "index",
+            "position": "after"
+          }
+        ]
+      }
+    ]
   }
 }

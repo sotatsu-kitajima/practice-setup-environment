@@ -12,7 +12,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "prepare": "husky install",
-    "lint-staged":"lint-staged"
+    "lint-staged": "lint-staged"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "next lint --fix",
@@ -44,6 +44,7 @@
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.3.0",
+    "boxen": "^7.0.2",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-storybook": "^0.6.10",
     "eslint-plugin-unused-imports": "^2.0.0",
